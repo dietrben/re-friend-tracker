@@ -176,9 +176,37 @@ export class GuiModel {
                         }
                     ]
                 }, {
+                    "id": "AddActivityLocationForm",
+                    "title": "Activity",
+                    "url": "/location/:locationKey/activity",
+                    "formFieldList": [
+                        {
+                            "id": "activity",
+                            "type": "autocomplete",
+                            "name": "Activity",
+                            "url": "/activity",
+                            "defaultKey": "activityKey",
+                            "readonly": true,
+                            "form": "ActivityForm",
+                            "width": 2
+                        },
+                        {
+                            "type": "deleteButton",
+                            "name": "Delete"
+                        },
+                        {
+                            "type": "cancelButton",
+                            "name": "Cancel"
+                        },
+                        {
+                            "type": "okButton",
+                            "name": "Ok"
+                        }
+                    ]
+                }, {
                     "id": "AddFriendForm",
                     "title": "Friend",
-                    "url": "/activity/:activityKey/friend ",
+                    "url": "/activity/:activityKey/friend",
                     "formFieldList": [
                         {
                             "id": "friend",
@@ -355,7 +383,7 @@ export class GuiModel {
                             }
                         },
                     ]
-                },,{
+                },{
                     "id": "activitylocationpage",
                     "elementList": [
                         {
@@ -375,7 +403,7 @@ export class GuiModel {
                             "icon": "fa-calendar-day",
                             "color": "green",
                             "form": {
-                                "form": "AddActivityForm"
+                                "form": "AddActivityLocationForm"
                             }
                         },
                         {
