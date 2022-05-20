@@ -364,7 +364,7 @@ export class GuiModel {
                         {
                             "type": "button",
                             "name": "EditLocation",
-                            "icon": "fa-cubed",
+                            "icon": "fa-cube",
                             "color": "green",
                             "form": {
                                 "form": "LocationForm"
