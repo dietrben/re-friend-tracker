@@ -176,6 +176,34 @@ export class GuiModel {
                         }
                     ]
                 }, {
+                    "id": "AddFriendForm",
+                    "title": "Friend",
+                    "url": "/activity/:activityKey/friend ",
+                    "formFieldList": [
+                        {
+                            "id": "friend",
+                            "type": "autocomplete",
+                            "name": "Friend",
+                            "url": "/friend",
+                            "defaultKey": "friendKey",
+                            "readonly": true,
+                            "form": "FriendForm",
+                            "width": 2
+                        },
+                        {
+                            "type": "deleteButton",
+                            "name": "Delete"
+                        },
+                        {
+                            "type": "cancelButton",
+                            "name": "Cancel"
+                        },
+                        {
+                            "type": "okButton",
+                            "name": "Ok"
+                        }
+                    ]
+                }, {
                     "id": "GroupForm",
                     "title": "Group",
                     "url": "/group",
@@ -293,6 +321,74 @@ export class GuiModel {
                             }
                         },
                     ]
+                },{
+                    "id": "friendactivitypage",
+                    "elementList": [
+                        {
+                            "type": "backbutton",
+                        },
+                        {
+                            "type": "button",
+                            "name": "EditActivity",
+                            "icon": "fa-calendar-day",
+                            "color": "green",
+                            "form": {
+                                "form": "ActivityForm"
+                            }
+                        },  {
+                            "type": "newButton",
+                            "name": "AddFriend",
+                            "icon": "fa-user",
+                            "color": "green",
+                            "form": {
+                                "form": "AddFriendForm"
+                            }
+                        },
+                        {
+                            "type": "list",
+                            "icon": "fa-user",
+                            "color": "blue",
+                            "search": true,
+                            "url": "/activity/:activityKey/friend",
+                            "form": {
+                                "form": "FriendForm"
+                            }
+                        },
+                    ]
+                },,{
+                    "id": "activitylocationpage",
+                    "elementList": [
+                        {
+                            "type": "backbutton",
+                        },
+                        {
+                            "type": "button",
+                            "name": "EditLocation",
+                            "icon": "fa-cubed",
+                            "color": "green",
+                            "form": {
+                                "form": "LocationForm"
+                            }
+                        },  {
+                            "type": "newButton",
+                            "name": "AddActivity",
+                            "icon": "fa-calendar-day",
+                            "color": "green",
+                            "form": {
+                                "form": "AddActivityForm"
+                            }
+                        },
+                        {
+                            "type": "list",
+                            "icon": "fa-calendar-day",
+                            "color": "pumpkin",
+                            "search": true,
+                            "url": "/location/:locationKey/activity ",
+                            "form": {
+                                "form": "ActivityForm"
+                            }
+                        },
+                    ]
                 },
                 {
                     "id": "locationspage",
@@ -316,9 +412,7 @@ export class GuiModel {
                             "color": "blue",
                             "search": true,
                             "url": "/location",
-                            "form": {
-                                "form": "LocationForm"
-                            }
+                            "page": "activitylocationpage"
                         },
                     ]
                 }, {
@@ -368,9 +462,7 @@ export class GuiModel {
                             "color": "pumpkin",
                             "search": true,
                             "url": "/activity",
-                            "form": {
-                                "form": "ActivityForm"
-                            }
+                            "page": "friendactivitypage"
                         },
 
 
